@@ -1,0 +1,134 @@
+/* To have smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+html {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #4d4e53;
+    box-sizing: border-box;
+}
+/* setting margin to 0 makes so the navbar borders dont have a space at their ends */
+body {
+    margin: 0;
+}
+
+header {
+    font-weight: normal;
+    color: black;
+    font-size: 1.7rem;
+}
+
+article {
+    /* margin here adds space between the header and the rest of the content */
+    margin: 15px;
+    font-size: 0.97em;
+}
+
+.elements {
+    /*adds space to the left so that header and article are not in the same column */
+    margin-left: 20px;
+}
+
+.snippet {
+    /* adds a space between each element code in the list */
+    margin-bottom: 4px;
+}
+
+.bracket::before {
+    content: '<';
+}
+
+.bracket::after {
+    content: '>';
+}
+.know {
+    /* adds space between the two list items */
+    margin-bottom: 23px;
+}
+/* this only target the code that is directly the child of article */
+article>code {
+    /* makes the code block so it takes the whole row/line then a padding to make it take more space thus making it look better */
+    background-color: #f7f7f7;
+    display: block;
+    /* line height helps increase the height of the element */
+    line-height: 2;
+    padding: 20px;
+    margin: 15px;
+    /* makes the borders circular rather than look sharp border */
+    border-radius: 5px;
+}
+/* this target code that is the grandchildren of article thus making sure that code inside p elements doesnt become code */
+article code {
+    background-color: #f7f7f7;
+    border-radius: 2px;
+}
+/* makes the navbar stay when scrolled */
+#navbar {
+    position: fixed;
+    /* height 100% allows the navbar to take the whole area */
+    height: 100%;
+    padding-left: 0;
+    margin-right: 20px;
+    border-right: 2px solid #00161666;
+}
+
+#navbar ul {
+    padding-left: 0;
+}
+
+#navbar li {
+    /* removes the dots of the ul */
+    list-style: none;
+    padding: 20px 20px 20px 20px;
+    /* adds a border to the top of each list element */
+    border-top: 1px solid;
+}
+
+#navbar header {
+    margin: 15px;
+}
+
+.nav-link {
+    /* block lets the whole element acts as a link*/
+    display: block;
+    /* removes the underline due to a */
+    text-decoration: none;
+    color: #4d4e53;
+    cursor: pointer;
+}
+
+#main-doc {
+    position: absolute;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    margin-left: 385px;
+}
+
+#lastlist {
+    margin-left: 20px;
+}
+/* if the window of html is made small so that width becomes 720px the navbar shifts to the top */
+@media only screen and (max-width: 720px) {
+    #navbar {
+        max-height: 200px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        z-index: 1;
+    }
+
+    #navbar ul {
+        border-bottom: 1px solid;
+    }
+
+    #main-doc {
+        position: relative;
+        margin-left: 0;
+        margin-top: 550px;
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="documentation.css">
+        <title>Documentation</title>
+    </head>
+
+    <body>
+        <nav id="navbar">
+            <header>HTML Documentation</header>
+            <ul>
+                <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+                <li><a href="#What_you_should_already_know?" class="nav-link">What you should already know?</a></li>
+                <li><a href="#What_is_HTML?" class="nav-link">What is HTML?</a></li>
+                <li><a href="#Nesting_elements" class="nav-link">Nesting elements</a></li>
+                <li><a href="#Omitting_quotes_around_attribute_values" class="nav-link">Omitting quotes around attribute
+                        values</a></li>
+                <li><a href="#Images" class="nav-link">Images</a></li>
+                <li><a href="#Headings" class="nav-link">Headings</a></li>
+                <li><a href="#Reference" class="nav-link">Reference</a></li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction">
+                <header>Introduction</header>
+                <article>
+                    <p>HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning
+                        and structure of web content. Other technologies besides HTML are generally used to describe a web
+                        page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</p>
+                    <p>"Hypertext" refers to links that connect web pages to one another, either within a single website or
+                        between websites. Links are a fundamental aspect of the Web. By uploading content to the Internet
+                        and linking it to pages created by other people, you become an active participant in the World Wide
+                        Web.</p>
+                    <p>HTML uses "markup" to annotate text, images, and other content for display in a Web browser. HTML
+                        markup includes special "elements" such as:</p>
+                    <ul class="elements">
+                        <li class="snippet"><code>&lt;head></code></li>
+                        <li class="snippet"><code>&lt;title></code></li>
+                        <li class="snippet"><code>&lt;body></code></li>
+                        <li class="snippet"><code>&lt;header></code></li>
+                        <li class="snippet"><code>&lt;footer></code></li>
+                        <li class="snippet"><code>&lt;article></code></li>
+                        <li class="snippet"><code>&lt;section></code></li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="What_you_should_already_know?">
+                <header>What you should already know?</header>
+                <article>
+                    <ul class="elements">
+                        <li class="know">Basic familiarity with using computers and using the web passively.</li>
+                        <li class="know">You should have a basic work environment set up as detailed in Installing basic
+                            software, and understand how to create and manage files.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="What_is_HTML?">
+                <header>What is HTML?</header>
+                <article>
+                    <p>HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of
+                        content to make it appear or act in a certain way. The enclosing tags can make content into a
+                        hyperlink to connect to another page, italicize words, and so on. For example, consider the
+                        following line of text:</p>
+                    <code>My cat is very grumpy</code>
+                    <p>If we wanted the text to stand by itself, we could specify that it is a paragraph by enclosing it in
+                        a paragraph (&lt;p>) element:</p>
+                    <code>&ltp>My cat is very grumpy&lt/p></code>
+                </article>
+            </section>
+            <section class="main-section" id="Nesting_elements">
+                <header>Nesting elements</header>
+                <article>
+                    <p>Elements can be placed within other elements. This is called nesting. If we wanted to state that our
+                        cat is very grumpy, we could wrap the word very in a &ltstrong> element, which means that the word
+                        is to have strong(er) text formatting:</p>
+                    <code>&ltp>My cat is &ltstrong>very&lt/strong> grumpy.&lt/p></code>
+                    <p>There is a right and wrong way to do nesting. In the example above, we opened the <code>p</code>
+                        element first, then opened the <code>strong</code> element. For proper nesting, we should close the
+                        <code>strong</code> element first, before closing the <code>p</code>.</p>
+                    <p>The following is an example of the wrong way to do nesting:</p>
+                    <code>&ltp>My cat is &ltstrong>very grumpy.&lt/p>&lt/strong></code>
+                    <p>The <strong>tags have to open and close in a way that they are inside or outside one
+                            another</strong>. With the kind of overlap in the example above, the browser has to guess at
+                        your intent. This kind of guessing can result in unexpected results.</p>
+                </article>
+            </section>
+            <section class="main-section" id="Omitting_quotes_around_attribute_values">
+                <header>Omitting quotes around attribute values</header>
+                <article>
+                    <p>If you look at code for a lot of other sites, you might come across a number of strange markup
+                        styles, including attribute values without quotes. This is permitted in certain circumstances, but
+                        it can also break your markup in other circumstances. For example, if we revisit our link example
+                        from earlier, we could write a basic version with only the <code>href</code> attribute, like this:
+                    </p>
+                    <code>&lta href=https://www.mozilla.org/>favorite website&lt/a></code>
+                    <p>However, as soon as we add the title attribute in this way, there are problems:</p>
+                    <code>&lta href=https://www.mozilla.org/ title=The Mozilla homepage>favorite website&lt/a></code>
+                    <p>As written above, the browser misinterprets the markup, mistaking the <code>title</code> attribute
+                        for three attributes: a title attribute with the value <code>The</code>, and two Boolean attributes,
+                        <code>Mozilla</code> and <code>homepage</code>. Obviously, this is not intended! It will cause
+                        errors or unexpected behavior, as you can see in the live example below. Try hovering over the link
+                        to view the title text!</p>
+                    <code><a href="https://www.mozilla.org/en-US/">favorite website</a> <a href="https://www.mozilla.org/en-US/">favorite website</a></code>
+                </article>
+            </section>
+            <section class="main-section" id="Images">
+                <header>Images</header>
+                <article>
+                    <p>Let's turn our attention to the <code>&ltimg></code> element again:</p>
+                    <code>&ltimg src="images/firefox-icon.png" alt="My test image" /></code>
+                    <p>As we said before, it embeds an image into our page in the position it appears. It does this via the
+                        <code>src</code> (source) attribute, which contains the path to our image file.</p>
+                    <p>We have also included an <code>alt</code> (alternative) attribute. In the <code>alt</code> attribute,
+                        you specify descriptive text for users who cannot see the image</p>
+                </article>
+            </section>
+            <section class="main-section" id="Headings">
+                <header>Headings</header>
+                <article>
+                    <p>Heading elements allow you to specify that certain parts of your content are headings — or
+                        subheadings. In the same way that a book has the main title, chapter titles, and subtitles, an HTML
+                        document can too. HTML contains 6 heading levels, <code>&lth1> - &lth6></code>, although you'll
+                        commonly only use 3 to 4 at most:</p>
+                    <code>
+                        &lt!-- 4 heading levels: --><br>
+                        &lth1>My main title</h1><br>
+                        &lth2>My top level heading</h2><br>
+                        &lth3>My subheading</h3><br>
+                        &lth4>My sub-subheading</h4>
+                    </code>
+                </article>
+            </section>
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <ul id="lastlist">
+                    <li>All the documentation in this page is taken from <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN</a>.</li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>
